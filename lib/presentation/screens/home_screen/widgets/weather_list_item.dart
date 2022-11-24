@@ -12,7 +12,7 @@ class WeatherListItem extends StatelessWidget {
 
   final String hour;
   final String icon;
-  final String degrees;
+  final int degrees;
 
   @override
   Widget build(BuildContext context) {

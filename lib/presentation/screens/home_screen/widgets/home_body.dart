@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_cubits/common/formatter.dart';
 import 'package:weather_cubits/common/weather_records.dart';
-import 'package:weather_cubits/constants/app_colors.dart';
 import 'package:weather_cubits/cubit/weather_cubit.dart';
 import 'package:weather_cubits/presentation/screens/home_screen/widgets/weather_chart.dart';
 import 'package:weather_cubits/presentation/screens/home_screen/widgets/weather_list_item.dart';
@@ -48,15 +47,9 @@ class _HomeBodyState extends State<HomeBody>
           listener: (context, state) {
             if (state.status == WeatherStatus.failure) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
+                const SnackBar(
                   behavior: SnackBarBehavior.floating,
-                  content: const Text('City name not found!'),
-                  action: SnackBarAction(
-                    label: 'Ok',
-                    textColor: AppColors.primaryColor,
-                    onPressed: () =>
-                        ScaffoldMessenger.of(context).hideCurrentSnackBar(),
-                  ),
+                  content: Text('City name not found!'),
                 ),
               );
             }
@@ -109,12 +102,12 @@ class _HomeBodyState extends State<HomeBody>
                                     .map((e) => WeatherListItem(
                                           hour: e.time!.substring(11, 16),
                                           icon: 'https:${e.condition!.icon!}',
-                                          degrees: e.tempC!.toString(),
+                                          degrees: e.tempC!.toInt(),
                                         ))
                                     .toList(),
                               ),
                               WeatherTabVItems(
-                                temp: tomorrowWeather.tempC.toString(),
+                                temp: tomorrowWeather.tempC!.toInt().toString(),
                                 wind:
                                     tomorrowWeather.windMph!.toInt().toString(),
                                 cloud: '${tomorrowWeather.cloud}',
@@ -124,7 +117,7 @@ class _HomeBodyState extends State<HomeBody>
                                     .map((e) => WeatherListItem(
                                           hour: e.time!.substring(11, 16),
                                           icon: 'https:${e.condition!.icon!}',
-                                          degrees: e.tempC!.toString(),
+                                          degrees: e.tempC!.toInt(),
                                         ))
                                     .toList(),
                               )

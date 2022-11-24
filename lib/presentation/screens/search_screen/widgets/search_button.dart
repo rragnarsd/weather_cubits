@@ -5,10 +5,10 @@ import 'package:weather_cubits/constants/text_styles.dart';
 class SearchButton extends StatelessWidget {
   const SearchButton({
     Key? key,
-    required this.function,
+    required this.submit,
   }) : super(key: key);
 
-  final Function()? function;
+  final Function()? submit;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,7 @@ class SearchButton extends StatelessWidget {
       height: 45,
       child: ElevatedButton(
         style: Decorations.kElevatedButton,
-        onPressed: function,
-        // onPressed: submit,
+        onPressed: submit,
         child: const Text(
           'Search',
           style: TextStyles.kTextStyle18White,

@@ -43,7 +43,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     },
                   ),
                   const SizedBox(height: 20),
-                  SearchButton(function: submit)
+                  SearchButton(submit: submit)
                 ],
               ),
             ),
