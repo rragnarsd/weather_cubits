@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_cubits/constants/text_styles.dart';
+import 'package:weather_cubits/cubit/weather_cubit.dart';
+import 'package:weather_cubits/presentation/screens/search_screen.dart';
 
 class WeatherLocation extends StatefulWidget {
   const WeatherLocation({
@@ -16,24 +19,48 @@ class WeatherLocation extends StatefulWidget {
 }
 
 class _WeatherLocationState extends State<WeatherLocation> {
+  String? _cityName;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            widget.currentLocation,
-            style: TextStyles.kTextStyle25Russo,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.currentLocation,
+                style: TextStyles.kTextStyle25Russo,
+              ),
+              const SizedBox(height: 5),
+              Text(
+                widget.formattedDate,
+                style: TextStyles.kTextStyleWhite,
+              ),
+            ],
           ),
-          const SizedBox(height: 5),
-          Text(
-            widget.formattedDate,
-            style: TextStyles.kTextStyleWhite,
+          IconButton(
+            onPressed: searchCity,
+            icon: const Icon(Icons.near_me),
           ),
         ],
       ),
     );
+  }
+
+  void searchCity() async {
+    _cityName = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const SearchScreen(),
+      ),
+    );
+    if (_cityName != null) {
+      if (!mounted) return;
+      context.read<WeatherCubit>().fetchWeather(_cityName!);
+    }
   }
 }

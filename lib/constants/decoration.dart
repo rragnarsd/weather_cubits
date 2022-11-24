@@ -14,4 +14,25 @@ class Decorations {
       borderRadius: BorderRadius.circular(12),
     ),
   );
+
+  static final kOutlinedBorderDarker = OutlineInputBorder(
+    borderSide: BorderSide(
+      color: AppColors.whiteColor.withOpacity(.5),
+    ),
+    borderRadius: BorderRadius.circular(12),
+  );
+
+  static final kOutlinedBorderLighter = OutlineInputBorder(
+    borderSide: BorderSide(
+      color: AppColors.whiteColor.withOpacity(.3),
+    ),
+    borderRadius: BorderRadius.circular(12),
+  );
+
+  static final kElevatedButton = ElevatedButton.styleFrom(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+    backgroundColor: AppColors.primaryColor,
+  );
 }

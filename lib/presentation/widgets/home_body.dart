@@ -45,16 +45,24 @@ class _HomeBodyState extends State<HomeBody>
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: BlocBuilder<WeatherCubit, WeatherState>(
+        child: BlocConsumer<WeatherCubit, WeatherState>(
+          listener: (context, state) {
+            if (state.status == WeatherStatus.failure) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('City name not found!'),
+                ),
+              );
+            }
+          },
           builder: (context, state) {
             switch (state.status) {
               case WeatherStatus.loading:
-              case WeatherStatus.initial:
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
               case WeatherStatus.failure:
-                return Center(child: Text('${state.exception}'));
+              case WeatherStatus.initial:
               case WeatherStatus.success:
                 var currentWeather = state.weatherAPI!.current;
                 var tomorrowWeather = state
