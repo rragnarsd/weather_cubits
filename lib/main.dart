@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_cubits/constants/app_colors.dart';
 import 'package:weather_cubits/core/notification_service.dart';
-import 'package:weather_cubits/presentation/screens/home_screen.dart';
+import 'package:weather_cubits/presentation/screens/home_screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,10 +25,13 @@ class _MyAppState extends State<MyApp> {
     service.initalize();
 
     service.showSceduledNotification(
-        id: 0,
-        title: 'It\'s gonna rain today',
-        body: 'Bring your rain jacket with you!',
-        sceduledDate: DateTime.now().add(const Duration(seconds: 10)));
+      id: 0,
+      title: 'It\'s gonna rain today',
+      body: 'Bring your rain jacket with you!',
+      sceduledDate: DateTime.now().add(
+        const Duration(seconds: 10),
+      ),
+    );
   }
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_cubits/presentation/widgets/weather_card_item.dart';
+import 'package:weather_cubits/presentation/screens/home_screen/widgets/weather_card_item.dart';
 
 class CardCloud extends StatelessWidget {
   const CardCloud({

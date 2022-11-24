@@ -29,10 +29,7 @@ class WeatherListItem extends StatelessWidget {
             const SizedBox(height: 10),
             Image.network(icon),
             const SizedBox(height: 10),
-            Text(
-              '$degrees°',
-              style: TextStyles.kTextStyleBoldWhite,
-            )
+            Text('$degrees°', style: TextStyles.kTextStyleBoldWhite)
           ]),
     );
   }

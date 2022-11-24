@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_cubits/constants/text_styles.dart';
 import 'package:weather_cubits/cubit/weather_cubit.dart';
-import 'package:weather_cubits/presentation/screens/search_screen.dart';
+import 'package:weather_cubits/presentation/screens/search_screen/search_screen.dart';
 
 class WeatherLocation extends StatefulWidget {
   const WeatherLocation({

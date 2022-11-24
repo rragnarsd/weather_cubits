@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:weather_cubits/constants/app_colors.dart';
+import 'package:weather_cubits/constants/text_styles.dart';
 
 class Decorations {
   static final kDecoration = BoxDecoration(
@@ -34,5 +35,21 @@ class Decorations {
       borderRadius: BorderRadius.circular(12),
     ),
     backgroundColor: AppColors.primaryColor,
+  );
+
+  static final kSearchInputDecoration = InputDecoration(
+    focusedBorder: Decorations.kOutlinedBorderDarker,
+    border: Decorations.kOutlinedBorderLighter,
+    errorBorder: Decorations.kOutlinedBorderDarker,
+    errorStyle: TextStyles.kTextStyle12White,
+    isDense: true,
+    hintText: 'Search for your favorite city',
+    hintStyle: TextStyles.kTextStyle12White.copyWith(
+      color: AppColors.whiteColor.withOpacity(.3),
+    ),
+    suffixIcon: Icon(
+      Icons.search,
+      color: AppColors.whiteColor.withOpacity(.3),
+    ),
   );
 }

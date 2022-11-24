@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_cubits/constants/app_colors.dart';
-import 'package:weather_cubits/presentation/widgets/circle_indicator.dart';
+import 'package:weather_cubits/presentation/screens/home_screen/widgets/circle_indicator.dart';
 
 class WeatherTabBar extends StatelessWidget {
   const WeatherTabBar({

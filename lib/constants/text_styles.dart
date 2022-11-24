@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_cubits/constants/app_colors.dart';
 
-
 class TextStyles {
   static const kTextStyleWhite = TextStyle(
     color: AppColors.whiteColor,
@@ -15,6 +14,11 @@ class TextStyles {
   static const kTextStyle14White = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 14,
+  );
+
+  static const kTextStyle18White = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 18,
   );
 
   static const kTextStyleBoldWhite = TextStyle(
