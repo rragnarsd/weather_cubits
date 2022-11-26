@@ -1,8 +1,8 @@
-import 'package:weather_cubits/data/models/forcast_day.dart';
-import 'package:weather_cubits/data/models/hour.dart';
+import 'package:weather_cubits/data/models/forcast_day_model.dart';
+import 'package:weather_cubits/data/models/hour_model.dart';
 
 class WeatherRecords {
-  List<Hour> getRecordsForNextThreeHours(List<Hour> hourlyRecords) {
+  List<HourModel> getRecordsForNextThreeHours(List<HourModel> hourlyRecords) {
     int currentHour = DateTime.now().hour;
     var leftHours = hourlyRecords.sublist(currentHour, hourlyRecords.length);
     int hoursRequired = 3;
@@ -14,12 +14,12 @@ class WeatherRecords {
     }
   }
 
-  List<Hour> getTodayRecords(List<Forecastday> forecastday) {
+  List<HourModel> getTodayRecords(List<ForecastdayModel> forecastday) {
     var records = forecastday[0];
     return getRecordsForNextThreeHours(records.hour!);
   }
 
-  List<Hour> getTomorrowRecords(List<Forecastday> forecastday) {
+  List<HourModel> getTomorrowRecords(List<ForecastdayModel> forecastday) {
     var records = forecastday[1];
     return getRecordsForNextThreeHours(records.hour!);
   }

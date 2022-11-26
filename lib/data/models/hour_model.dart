@@ -1,10 +1,10 @@
-import 'package:weather_cubits/data/models/condition.dart';
+import 'package:weather_cubits/data/models/condition_model.dart';
 
-class Hour {
+class HourModel {
   String? time;
   double? tempC;
   int? isDay;
-  Condition? condition;
+  ConditionModel? condition;
   double? windMph;
   int? windDegree;
   String? windDir;
@@ -18,7 +18,7 @@ class Hour {
   int? chanceOfSnow;
   double? uv;
 
-  Hour({
+  HourModel({
     this.time,
     this.tempC,
     this.isDay,
@@ -37,12 +37,12 @@ class Hour {
     this.uv,
   });
 
-  Hour.fromJson(Map<String, dynamic> json) {
+  HourModel.fromJson(Map<String, dynamic> json) {
     time = json['time'];
     tempC = json['temp_c'];
     isDay = json['is_day'];
     condition = json['condition'] != null
-        ? Condition.fromJson(json['condition'])
+        ? ConditionModel.fromJson(json['condition'])
         : null;
     windMph = json['wind_mph'];
     windDegree = json['wind_degree'];

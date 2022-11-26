@@ -1,15 +1,15 @@
-import 'package:weather_cubits/data/models/forcast_day.dart';
+import 'package:weather_cubits/data/models/forcast_day_model.dart';
 
-class Forecast {
-  List<Forecastday>? forecastday;
+class ForecastModel {
+  List<ForecastdayModel>? forecastday;
 
-  Forecast({this.forecastday});
+  ForecastModel({this.forecastday});
 
-  Forecast.fromJson(Map<String, dynamic> json) {
+  ForecastModel.fromJson(Map<String, dynamic> json) {
     if (json['forecastday'] != null) {
-      forecastday = <Forecastday>[];
+      forecastday = <ForecastdayModel>[];
       json['forecastday'].forEach((v) {
-        forecastday!.add(Forecastday.fromJson(v));
+        forecastday!.add(ForecastdayModel.fromJson(v));
       });
     }
   }

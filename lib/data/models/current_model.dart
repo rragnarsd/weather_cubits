@@ -1,11 +1,11 @@
-import 'package:weather_cubits/data/models/condition.dart';
+import 'package:weather_cubits/data/models/condition_model.dart';
 
-class Current {
+class CurrentModel {
   int? lastUpdatedEpoch;
   String? lastUpdated;
   double? tempC;
   int? isDay;
-  Condition? condition;
+  ConditionModel? condition;
   double? windMph;
   int? windDegree;
   String? windDir;
@@ -15,7 +15,7 @@ class Current {
   double? uv;
   double? gustMph;
 
-  Current({
+  CurrentModel({
     this.lastUpdatedEpoch,
     this.lastUpdated,
     this.tempC,
@@ -31,13 +31,13 @@ class Current {
     this.gustMph,
   });
 
-  Current.fromJson(Map<String, dynamic> json) {
+  CurrentModel.fromJson(Map<String, dynamic> json) {
     lastUpdatedEpoch = json['last_updated_epoch'];
     lastUpdated = json['last_updated'];
     tempC = json['temp_c'];
     isDay = json['is_day'];
     condition = json['condition'] != null
-        ? Condition.fromJson(json['condition'])
+        ? ConditionModel.fromJson(json['condition'])
         : null;
     windMph = json['wind_mph'];
     windDegree = json['wind_degree'];

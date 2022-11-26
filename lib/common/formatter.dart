@@ -1,13 +1,13 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:weather_cubits/data/models/hour.dart';
+import 'package:weather_cubits/data/models/hour_model.dart';
 
 class ChartDataFormatter {
   static ChartData getTempData({
-    required List<Hour> hourlyWeather,
+    required List<HourModel> hourlyWeather,
     required int currentHour,
     required int nextHours,
   }) {
-    List<Hour> recordsForNext12Hours = [];
+    List<HourModel> recordsForNext12Hours = [];
 
     int leftHours = hourlyWeather.length - currentHour;
     if (leftHours >= 12) {

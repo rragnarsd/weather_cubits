@@ -1,4 +1,4 @@
-class Location {
+class LocationModel {
   String? name;
   String? region;
   String? country;
@@ -7,7 +7,7 @@ class Location {
   int? localtimeEpoch;
   String? localtime;
 
-  Location({
+  LocationModel({
     this.name,
     this.region,
     this.country,
@@ -17,7 +17,7 @@ class Location {
     this.localtime,
   });
 
-  Location.fromJson(Map<String, dynamic> json) {
+  LocationModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     region = json['region'];
     country = json['country'];

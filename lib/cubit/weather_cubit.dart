@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:weather_cubits/data/models/weather_api.dart';
+import 'package:weather_cubits/data/models/weather_model.dart';
 import 'package:weather_cubits/data/repository/weather_repository.dart';
 
 part 'weather_state.dart';
@@ -19,7 +19,7 @@ class WeatherCubit extends Cubit<WeatherState> {
       emit(
         state.copyWith(
           status: WeatherStatus.success,
-          weatherAPI: weatherData,
+          weatherModel: weatherData,
         ),
       );
     } on Exception catch (exception) {

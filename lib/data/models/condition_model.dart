@@ -1,11 +1,11 @@
-class Condition {
+class ConditionModel {
   String? text;
   String? icon;
   int? code;
 
-  Condition({this.text, this.icon, this.code});
+  ConditionModel({this.text, this.icon, this.code});
 
-  Condition.fromJson(Map<String, dynamic> json) {
+  ConditionModel.fromJson(Map<String, dynamic> json) {
     text = json['text'];
     icon = json['icon'];
     code = json['code'];

@@ -4,26 +4,26 @@ enum WeatherStatus { initial, loading, success, failure }
 
 class WeatherState extends Equatable {
   final WeatherStatus status;
-  final WeatherAPI? weatherAPI;
+  final WeatherModel? weatherModel;
   final Exception? exception;
 
   const WeatherState({
     this.status = WeatherStatus.initial,
-    this.weatherAPI,
+    this.weatherModel,
     this.exception,
   });
 
   @override
-  List<Object?> get props => [status, weatherAPI, exception];
+  List<Object?> get props => [status, weatherModel, exception];
 
   WeatherState copyWith({
     WeatherStatus? status,
-    WeatherAPI? weatherAPI,
+    WeatherModel? weatherModel,
     Exception? exception,
   }) {
     return WeatherState(
       status: status ?? this.status,
-      weatherAPI: weatherAPI ?? this.weatherAPI,
+      weatherModel: weatherModel ?? this.weatherModel,
       exception: exception ?? this.exception,
     );
   }

@@ -63,13 +63,13 @@ class _HomeBodyState extends State<HomeBody>
               case WeatherStatus.failure:
               case WeatherStatus.initial:
               case WeatherStatus.success:
-                var currentWeather = state.weatherAPI!.current;
+                var currentWeather = state.weatherModel!.current;
                 var tomorrowWeather = state
-                    .weatherAPI!.forecast!.forecastday![1].hour![currentHour];
+                    .weatherModel!.forecast!.forecastday![1].hour![currentHour];
 
                 var chartData = ChartDataFormatter.getTempData(
                   hourlyWeather:
-                      state.weatherAPI!.forecast!.forecastday![0].hour!,
+                      state.weatherModel!.forecast!.forecastday![0].hour!,
                   currentHour: currentHour,
                   nextHours: 12,
                 );
@@ -79,7 +79,7 @@ class _HomeBodyState extends State<HomeBody>
                   children: [
                     WeatherLocation(
                       formattedDate: formattedDate,
-                      currentLocation: state.weatherAPI!.location!.region!,
+                      currentLocation: state.weatherModel!.location!.region!,
                     ),
                     WeatherTabBar(controller: _controller),
                     const SizedBox(height: 20),
@@ -98,7 +98,7 @@ class _HomeBodyState extends State<HomeBody>
                                 cloud: currentWeather.cloud.toString(),
                                 list: calculations
                                     .getTodayRecords(state
-                                        .weatherAPI!.forecast!.forecastday!)
+                                        .weatherModel!.forecast!.forecastday!)
                                     .map((e) => WeatherListItem(
                                           hour: e.time!.substring(11, 16),
                                           icon: 'https:${e.condition!.icon!}',
@@ -113,7 +113,7 @@ class _HomeBodyState extends State<HomeBody>
                                 cloud: '${tomorrowWeather.cloud}',
                                 list: calculations
                                     .getTomorrowRecords(state
-                                        .weatherAPI!.forecast!.forecastday!)
+                                        .weatherModel!.forecast!.forecastday!)
                                     .map((e) => WeatherListItem(
                                           hour: e.time!.substring(11, 16),
                                           icon: 'https:${e.condition!.icon!}',

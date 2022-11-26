@@ -1,19 +1,19 @@
-import 'package:weather_cubits/data/models/day.dart';
-import 'package:weather_cubits/data/models/hour.dart';
+import 'package:weather_cubits/data/models/day_model.dart';
+import 'package:weather_cubits/data/models/hour_model.dart';
 
-class Forecastday {
+class ForecastdayModel {
   String? date;
-  Day? day;
-  List<Hour>? hour;
-  Forecastday({this.date});
+  DayModel? day;
+  List<HourModel>? hour;
+  ForecastdayModel({this.date});
 
-  Forecastday.fromJson(Map<String, dynamic> json) {
+  ForecastdayModel.fromJson(Map<String, dynamic> json) {
     date = json['date'];
-    day = json['day'] != null ? Day.fromJson(json['day']) : null;
+    day = json['day'] != null ? DayModel.fromJson(json['day']) : null;
     if (json['hour'] != null) {
-      hour = <Hour>[];
+      hour = <HourModel>[];
       json['hour'].forEach((v) {
-        hour!.add(Hour.fromJson(v));
+        hour!.add(HourModel.fromJson(v));
       });
     }
   }
