@@ -23,12 +23,14 @@
 - Font family: ChakraPetch and RussoOne
 - Color palette: - #1b1d1f - #f3f3f3 - #21394E - #9E9E9E - #000000
 
-![palette, instagram post template (3)](https://user-images.githubusercontent.com/44742460/203862534-db7294a4-df5e-4e70-8177-867f7641825d.png)
+![Summer Brand Color Palette Instagram Post (1)](https://user-images.githubusercontent.com/44742460/204097350-36810f40-d6ab-4ce0-8644-ea027cad4332.png)
 
 ## :bulb: Challenges
 - Implement graphs and local notifications
 
 ## Screenshot
+![Neutral Minimalist Phone Mockup Blogging Tips Your Story](https://user-images.githubusercontent.com/44742460/204097396-028ce539-06c1-4b02-a4b0-ed709739ecc8.png)
+
 
 ## Live preview
 
