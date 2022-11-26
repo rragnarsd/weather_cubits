@@ -32,6 +32,10 @@
 
 ## Live preview
 
+
+https://user-images.githubusercontent.com/44742460/204095320-380f9a12-8e25-49f4-847f-334cd4ad8a8e.mp4
+
+
 ## Getting Started
 
 The project uses api from: https://www.weatherapi.com/
