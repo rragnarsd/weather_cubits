@@ -100,10 +100,10 @@ class _HomeBodyState extends State<HomeBody>
                                     .getTodayRecords(state
                                         .weatherModel!.forecast!.forecastday!)
                                     .map((e) => WeatherListItem(
-                                          hour: e.time!.substring(11, 16),
-                                          icon: 'https:${e.condition!.icon!}',
-                                          degrees: e.tempC!.toInt(),
-                                        ))
+                                        hour: e.time!.substring(11, 16),
+                                        icon: 'https:${e.condition!.icon!}',
+                                        degrees: e.tempC!.toInt(),
+                                        feelsLike: e.feelslikeC!.toString()))
                                     .toList(),
                               ),
                               WeatherTabVItems(
@@ -115,10 +115,10 @@ class _HomeBodyState extends State<HomeBody>
                                     .getTomorrowRecords(state
                                         .weatherModel!.forecast!.forecastday!)
                                     .map((e) => WeatherListItem(
-                                          hour: e.time!.substring(11, 16),
-                                          icon: 'https:${e.condition!.icon!}',
-                                          degrees: e.tempC!.toInt(),
-                                        ))
+                                        hour: e.time!.substring(11, 16),
+                                        icon: 'https:${e.condition!.icon!}',
+                                        degrees: e.tempC!.toInt(),
+                                        feelsLike: e.feelslikeC!.toString()))
                                     .toList(),
                               )
                             ]),

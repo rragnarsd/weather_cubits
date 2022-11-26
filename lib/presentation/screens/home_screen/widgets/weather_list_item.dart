@@ -7,12 +7,14 @@ class WeatherListItem extends StatelessWidget {
     required this.hour,
     required this.icon,
     required this.degrees,
+    required this.feelsLike,
     super.key,
   });
 
   final String hour;
   final String icon;
   final int degrees;
+  final String feelsLike;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,20 @@ class WeatherListItem extends StatelessWidget {
             const SizedBox(height: 10),
             Image.network(icon),
             const SizedBox(height: 10),
-            Text('$degrees°', style: TextStyles.kTextStyleBoldWhite)
+            Text('$degrees°', style: TextStyles.kTextStyleBoldWhite),
+            size.height > 900
+                ? Column(
+                    children: [
+                      const SizedBox(height: 10),
+                      Text(
+                        'Feels like \n $feelsLike°',
+                        style:
+                            TextStyles.kTextStyleWhite.copyWith(fontSize: 12),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  )
+                : const SizedBox.shrink()
           ]),
     );
   }
