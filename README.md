@@ -11,7 +11,7 @@
 - Flutter_native_timezone - https://pub.dev/packages/flutter_native_timezone
 
 ## :bomb: Features
-- Search Functionality
+- Search by city name
 - Cubit state-management
 - Local Notifications (Currently at 8 A.M)
 - Weather graph for the next 12 hours
@@ -33,6 +33,10 @@
 ## Live preview
 
 ## Getting Started
+
+The project uses api from: https://www.weatherapi.com/
+- To use the API you need to register and obtain your own key. 
+- You can add it to the weather_repository.dart file.
 
 This project is a starting point for a Flutter application.
 
