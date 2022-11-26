@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weather_cubits/constants/app_colors.dart';
-import 'package:weather_cubits/core/notification_service.dart';
-import 'package:weather_cubits/presentation/screens/home_screen/home_screen.dart';
+import 'package:weather_cubits/presentation/theme/app_colors.dart';
+import 'package:weather_cubits/application/core/notification_service.dart';
+import 'package:weather_cubits/presentation/home_screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
