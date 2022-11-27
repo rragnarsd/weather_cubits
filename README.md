@@ -4,16 +4,18 @@
 - Http - https://pub.dev/packages/http
 - Google_fonts - https://pub.dev/packages/google_fonts
 - Flutter_bloc - https://pub.dev/packages/flutter_bloc
-- Equatble - https://pub.dev/packages/equatable
+- Equatable - https://pub.dev/packages/equatable
 - Intl - https://pub.dev/packages/intl
 - Fl_chart - https://pub.dev/packages/fl_chart
 - Flutter_local_notifications - https://pub.dev/packages/flutter_local_notifications
 - Flutter_native_timezone - https://pub.dev/packages/flutter_native_timezone
+- Freezed - https://pub.dev/packages/freezed
 
 ## :bomb: Features
 - Search by city name
 - Cubit state-management
-- Local Notifications (Currently at 8 A.M)
+- Clean Architecture
+- Local Notifications (Currently at 5 P.M)
 - Weather graph for the next 12 hours
 - Weather results for today and tomorrow (temp, wind, cloud)
 - Weather results for the next 3 hours (today-tomorrow)
@@ -31,12 +33,8 @@
 ## Screenshot
 ![Neutral Minimalist Phone Mockup Blogging Tips Your Story](https://user-images.githubusercontent.com/44742460/204097396-028ce539-06c1-4b02-a4b0-ed709739ecc8.png)
 
-
 ## Live preview
-
-
-https://user-images.githubusercontent.com/44742460/204095320-380f9a12-8e25-49f4-847f-334cd4ad8a8e.mp4
-
+https://user-images.githubusercontent.com/44742460/204149633-30e4cf55-4088-47af-ae4c-327670198760.mp4
 
 ## Getting Started
 
