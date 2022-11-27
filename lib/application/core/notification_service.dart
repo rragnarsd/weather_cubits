@@ -4,7 +4,6 @@ import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:weather_cubits/presentation/theme/app_colors.dart';
 
-
 class NotificationService {
   NotificationService();
 
@@ -54,7 +53,7 @@ class NotificationService {
       title,
       body,
       //Specifies when a notification should be displayed
-      _scheduleIfRaining(const Time(11, 57)),
+      _scheduleIfRaining(const Time(17)),
       details,
       androidAllowWhileIdle: true,
       uiLocalNotificationDateInterpretation:

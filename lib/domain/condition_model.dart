@@ -1,21 +1,16 @@
-class ConditionModel {
-  String? text;
-  String? icon;
-  int? code;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  ConditionModel({this.text, this.icon, this.code});
+part 'condition_model.freezed.dart';
+part 'condition_model.g.dart';
 
-  ConditionModel.fromJson(Map<String, dynamic> json) {
-    text = json['text'];
-    icon = json['icon'];
-    code = json['code'];
-  }
+@freezed
+class ConditionModel with _$ConditionModel {
+  factory ConditionModel({
+    String? text,
+    String? icon,
+    int? code,
+  }) = _ConditionModel;
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['text'] = text;
-    data['icon'] = icon;
-    data['code'] = code;
-    return data;
-  }
+  factory ConditionModel.fromJson(Map<String, dynamic> json) =>
+      _$ConditionModelFromJson(json);
 }

@@ -1,37 +1,19 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:weather_cubits/domain/current_model.dart';
 import 'package:weather_cubits/domain/forecast_model.dart';
 import 'package:weather_cubits/domain/location_model.dart';
 
-class WeatherModel {
-  LocationModel? location;
-  CurrentModel? current;
-  ForecastModel? forecast;
+part 'weather_model.freezed.dart';
+part 'weather_model.g.dart';
 
-  WeatherModel({this.location, this.current, this.forecast});
+@freezed
+class WeatherModel with _$WeatherModel {
+  factory WeatherModel({
+    LocationModel? location,
+    CurrentModel? current,
+    ForecastModel? forecast,
+  }) = _WeatherModel;
 
-  WeatherModel.fromJson(Map<String, dynamic> json) {
-    location = json['location'] != null
-        ? LocationModel.fromJson(json['location'])
-        : null;
-    current =
-        json['current'] != null ? CurrentModel.fromJson(json['current']) : null;
-    forecast = json['forecast'] != null
-        ? ForecastModel.fromJson(json['forecast'])
-        : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (location != null) {
-      data['location'] = location!.toJson();
-    }
-    if (current != null) {
-      data['current'] = current!.toJson();
-    }
-    if (forecast != null) {
-      data['forecast'] = forecast!.toJson();
-    }
-
-    return data;
-  }
+  factory WeatherModel.fromJson(Map<String, dynamic> json) =>
+      _$WeatherModelFromJson(json);
 }

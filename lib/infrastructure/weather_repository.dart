@@ -1,5 +1,5 @@
-import 'package:weather_cubits/infrastructure/network_helper.dart';
 import 'package:weather_cubits/domain/weather_model.dart';
+import 'package:weather_cubits/infrastructure/network_helper.dart';
 import 'package:weather_cubits/infrastructure/weather_endpoints.dart';
 
 class WeatherRepository {

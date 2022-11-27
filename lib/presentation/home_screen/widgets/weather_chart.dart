@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_cubits/application/common/formatter.dart';
+import 'package:weather_cubits/application/utils/formatter.dart';
 import 'package:weather_cubits/presentation/theme/text_styles.dart';
 import 'package:weather_cubits/presentation/home_screen/widgets/weather_line_chart.dart';
 

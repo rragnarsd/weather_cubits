@@ -1,24 +1,15 @@
-import 'package:weather_cubits/domain/forcast_day_model.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:weather_cubits/domain/forecast_day_model.dart';
 
-class ForecastModel {
-  List<ForecastdayModel>? forecastday;
+part 'forecast_model.freezed.dart';
+part 'forecast_model.g.dart';
 
-  ForecastModel({this.forecastday});
+@freezed
+class ForecastModel with _$ForecastModel {
+  factory ForecastModel({
+    List<ForecastDayModel>? forecastday,
+  }) = _ForecastModel;
 
-  ForecastModel.fromJson(Map<String, dynamic> json) {
-    if (json['forecastday'] != null) {
-      forecastday = <ForecastdayModel>[];
-      json['forecastday'].forEach((v) {
-        forecastday!.add(ForecastdayModel.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (forecastday != null) {
-      data['forecastday'] = forecastday!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  factory ForecastModel.fromJson(Map<String, dynamic> json) =>
+      _$ForecastModelFromJson(json);
 }

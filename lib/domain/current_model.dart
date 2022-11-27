@@ -1,71 +1,29 @@
+// ignore_for_file: invalid_annotation_target
+
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:weather_cubits/domain/condition_model.dart';
 
-class CurrentModel {
-  int? lastUpdatedEpoch;
-  String? lastUpdated;
-  double? tempC;
-  int? isDay;
-  ConditionModel? condition;
-  double? windMph;
-  int? windDegree;
-  String? windDir;
-  int? humidity;
-  int? cloud;
-  double? feelslikeC;
-  double? uv;
-  double? gustMph;
+part 'current_model.freezed.dart';
+part 'current_model.g.dart';
 
-  CurrentModel({
-    this.lastUpdatedEpoch,
-    this.lastUpdated,
-    this.tempC,
-    this.isDay,
-    this.condition,
-    this.windMph,
-    this.windDegree,
-    this.windDir,
-    this.humidity,
-    this.cloud,
-    this.feelslikeC,
-    this.uv,
-    this.gustMph,
-  });
+@freezed
+class CurrentModel with _$CurrentModel {
+  factory CurrentModel({
+    @JsonKey(name: 'last_updated_epoch') int? lastUpdatedEpoch,
+    @JsonKey(name: 'last_updated') String? lastUpdated,
+    @JsonKey(name: 'temp_c') double? tempC,
+    @JsonKey(name: 'is_day') int? isDay,
+    ConditionModel? condition,
+    @JsonKey(name: 'wind_mph') double? windMph,
+    @JsonKey(name: 'wind_degree') int? windDegree,
+    @JsonKey(name: 'wind_dir') String? windDir,
+    int? humidity,
+    int? cloud,
+    @JsonKey(name: 'feelslike_c') double? feelslikeC,
+    double? uv,
+    @JsonKey(name: 'gust_mph') double? gustMph,
+  }) = _CurrentModel;
 
-  CurrentModel.fromJson(Map<String, dynamic> json) {
-    lastUpdatedEpoch = json['last_updated_epoch'];
-    lastUpdated = json['last_updated'];
-    tempC = json['temp_c'];
-    isDay = json['is_day'];
-    condition = json['condition'] != null
-        ? ConditionModel.fromJson(json['condition'])
-        : null;
-    windMph = json['wind_mph'];
-    windDegree = json['wind_degree'];
-    windDir = json['wind_dir'];
-    humidity = json['humidity'];
-    cloud = json['cloud'];
-    feelslikeC = json['feelslike_c'];
-    uv = json['uv'];
-    gustMph = json['gust_mph'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['last_updated_epoch'] = lastUpdatedEpoch;
-    data['last_updated'] = lastUpdated;
-    data['temp_c'] = tempC;
-    data['is_day'] = isDay;
-    if (condition != null) {
-      data['condition'] = condition!.toJson();
-    }
-    data['wind_mph'] = windMph;
-    data['wind_degree'] = windDegree;
-    data['wind_dir'] = windDir;
-    data['humidity'] = humidity;
-    data['cloud'] = cloud;
-    data['feelslike_c'] = feelslikeC;
-    data['uv'] = uv;
-    data['gust_mph'] = gustMph;
-    return data;
-  }
+  factory CurrentModel.fromJson(Map<String, dynamic> json) =>
+      _$CurrentModelFromJson(json);
 }

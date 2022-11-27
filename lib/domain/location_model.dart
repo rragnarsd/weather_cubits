@@ -1,41 +1,21 @@
-class LocationModel {
-  String? name;
-  String? region;
-  String? country;
-  double? lat;
-  double? lon;
-  int? localtimeEpoch;
-  String? localtime;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  LocationModel({
-    this.name,
-    this.region,
-    this.country,
-    this.lat,
-    this.lon,
-    this.localtimeEpoch,
-    this.localtime,
-  });
+part 'location_model.freezed.dart';
+part 'location_model.g.dart';
 
-  LocationModel.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    region = json['region'];
-    country = json['country'];
-    lat = json['lat'];
-    lon = json['lon'];
-    localtimeEpoch = json['localtime_epoch'];
-    localtime = json['localtime'];
-  }
+@freezed
+class LocationModel with _$LocationModel {
+  factory LocationModel({
+    String? name,
+    String? region,
+    String? country,
+    double? lat,
+    double? lon,
+    // ignore: invalid_annotation_target
+    @JsonKey(name: 'localtime_epoch') int? localtimeEpoch,
+    String? localtime,
+  }) = _LocationModel;
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['name'] = name;
-    data['region'] = region;
-    data['country'] = country;
-    data['lat'] = lat;
-    data['lon'] = lon;
-    data['localtime_epoch'] = localtimeEpoch;
-    data['localtime'] = localtime;
-    return data;
-  }
+  factory LocationModel.fromJson(Map<String, dynamic> json) =>
+      _$LocationModelFromJson(json);
 }
