@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/44742460/204149633-30e4cf55-4088-47af-
 
 The project uses api from: https://www.weatherapi.com/
 - To use the API you need to register and obtain your own key. 
-- You can add it to the weather_repository.dart file.
+- You can add it to the weather_endpoints.dart file.
 
 This project is a starting point for a Flutter application.
 
